@@ -9,7 +9,7 @@ module.exports = {
     extends: 'eslint:recommended',
     rules: {
         quotes: ['warn', 'single'],
-        semi: ['warn', 'always'],
+        semi: ['warn', 'never'],
         indent: ['warn', 4],
         'no-unused-vars': 'warn'
     }
