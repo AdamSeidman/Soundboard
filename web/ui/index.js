@@ -26,3 +26,22 @@ var setCookieItem = function (key, value) {
 var deleteCookieItem = function (key) {
     document.cookie = `${key}=X; path=/; max-age=0;`
 }
+
+// Send actual http request through axios
+var axiosCommand = function (path, method, args) {
+    if (args === undefined) {
+        args = ''
+    } else {
+        args = `_${args}`
+    }
+    path = `${path}/${pass}${args}`
+    console.log(`${method.toUpperCase()}: /${path}`)
+    return axios({
+        method: method,
+        url: window.location.href + path
+    })
+}
+
+var post = (path, args) => axiosCommand(path, 'post', args)
+
+var get = (path, args) => { return axiosCommand(path, 'get', args) }

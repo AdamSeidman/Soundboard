@@ -10,7 +10,6 @@ const GET = '' /* Needs to not be undefined. (Clean) */
 
 var wrap = function(args, level, fn, rets) {
     args = args.split('_')
-    if (args.length < 1) return
     let pass = args.shift()
     let response = {resp: 'badDataOrPerms'}
     if (getPerms(pass) >= level) {
