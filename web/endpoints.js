@@ -33,9 +33,9 @@ var sendSoundList = function() {
 }
 
 var playEffect = function(args) {
-    let file = args.join('_')
+    let file = `${args.join('_')}.mp3` // TODO soundEffectType
     console.log(`Playing ${file} [effect]`)
-    let vc = utils.getFirstVC()
+    let vc = utils.getVoiceChannel('1193074567669874738')
     voice.enterVoiceChannel(vc)
     setTimeout(() => voice.playEffect(file, vc), 100)
 }

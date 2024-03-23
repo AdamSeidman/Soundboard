@@ -23,6 +23,8 @@ client.on('ready', () => {
     utils.getUserById = async id => await client.users.fetch(id)
     console.log('Soundboard Bot Initialized')
     client.guilds.cache.forEach(checkOnLeaving)
+
+    utils.getVoiceChannel = (id) => client.channels.cache.find(x => x instanceof Discord.VoiceChannel && `${x.id}` == `${id}`)
 })
 
 client.on('guildCreate', checkOnLeaving)

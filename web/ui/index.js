@@ -5,7 +5,7 @@ const ADMIN = 2
 const DEVELOPER = 1
 const HACKER = 0
 
-var pass = 'X'
+var pass = 'ThereIsPoopInMyButt'
 var level = 0
 var rememberChecked = true
 
@@ -45,3 +45,8 @@ var axiosCommand = function (path, method, args) {
 var post = (path, args) => axiosCommand(path, 'post', args)
 
 var get = (path, args) => { return axiosCommand(path, 'get', args) }
+
+var penis = function (word) {
+    post('play-effect', word)
+    post('test', word) // TODO
+}
